@@ -1,17 +1,17 @@
-from django.views.generic.list import StdentView
-from django.views.generic.edit import UpdateView  
+from django.views.generic.list import ListView
+from django.views.generic.edit import UpdateView, CreateView, DeleteView, ModelFormMixin 
 from django.core.urlresolvers import reverse_lazy
-from students.models import Student 
+from student.models import Student 
    
    
-class StudentList(StudentView):
-    model = Stdudent
-
-
-class StudentCreate(UpdateView):
+class StudentList(ListView):
     model = Student
-    field = ['name', 'age', 'faculty']
-    success_url = reverse_lazy('student')
+    
+    
+class StudentUpdate(UpdateView):
+    model = Student
+    fields = ['name', 'age', 'faculty']
+    success_url = reverse_lazy('list')
     
     
 class StudentCreate(CreateView):
@@ -19,12 +19,7 @@ class StudentCreate(CreateView):
     fields = ['name', 'age', 'faculty']
     success_url = reverse_lazy('list')
 
-    def form_valid(self, form):
-        ''' Overriding the form valid method to set the user password correctly '''
-        self.object = form.save()
-        self.object.set_password(self.object.password)
-        self.object.save()
-        return super(ModelFormMixin, self).form_valid(form)
+    
         
         
 class StudentDelete(DeleteView):

@@ -1,0 +1,7 @@
+Delete
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <p>Are you sure you want to delete "{{ student }}"?</p>
+<input type="submit" name="submit" value="Comfirm"/>
+</form>
