@@ -1,15 +1,10 @@
-from django.views.generic.list import StdentView
-   
-   
-   
-class StudentList(StudentView):
-    model = Stdudent
+from django.views.generic.list import ListView
 
-
-class StudentCreate(CreatetView):
+from models import Student
+   
+class StudentList(ListView):
     model = Student
-    field = ['name', 'age', 'faculty']
-    success_url = reverse_lazy('student')
+
     
     
      

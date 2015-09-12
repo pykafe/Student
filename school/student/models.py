@@ -2,6 +2,6 @@ from django.db import models
 
 
 class Student(models.Model):
-    name = charField(max_length=15)
-    age = IntegerField()
-    faculty = charField(max_length=15)
+    name = models.CharField(max_length=45)
+    age = models.IntegerField()
+    faculty =models.CharField(max_length=35)
