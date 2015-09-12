@@ -1,1 +1,9 @@
-Lista estudante
+List Student
+<br/>
+<a href="{% url 'create' %}" >Create</a><p>
+{% for student in student_list %}
+    <a href="{% url 'delete' student.pk %}">Delete</a>
+    <a href="{% url 'update' student.pk %}">Update</a>
+    {{ student.name }} | {{ student.age }} | {{ student.faculty }}
+    <br/>
+{% endfor %}
