@@ -1,3 +1,16 @@
-from django.shortcuts import render
+from django.views.generic.list import StdentView
+   
+   
+   
+class StudentList(StudentView):
+    model = Stdudent
 
-# Create your views here.
+
+class StudentCreate(CreatetView):
+    model = Student
+    field = ['name', 'age', 'faculty']
+    success_url = reverse_lazy('student')
+    
+    
+     
+
