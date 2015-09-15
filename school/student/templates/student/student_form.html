@@ -7,7 +7,21 @@
 {% block content %}
     <form action="" method="post">
          {% csrf_token %}
-         {{ form.as_p }}
+         <div>
+             {{ form.name.label_tag }}
+             {{ form.name }}
+             {{ form.name.errors }}
+         </div>
+         <div>
+             {{ form.age.label_tag }}
+             {{ form.age }}
+             {{ form.age.errors }}
+         </div>
+         <div>
+             {{ form.faculty.label_tag }}
+             {{ form.faculty }}
+             {{ form.faculty.errors }}
+         </div>
          <input type="submit" value="Submit" />
     </form>
 {% endblock %}
