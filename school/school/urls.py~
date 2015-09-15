@@ -19,5 +19,5 @@ from student.views import StudentList
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('student.urls')),
+    url(r'^', include('students.urls')),
 ]

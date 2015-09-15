@@ -1,7 +1,7 @@
 {% extends 'student/base.html' %}
 
 {% block title %}
-    Delete Student
+    Create
 {% endblock %}
 
 {% block content %} 

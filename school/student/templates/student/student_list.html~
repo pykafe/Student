@@ -1,7 +1,7 @@
 {% extends 'student/base.html' %}
 
 {% block title %}
-    List Students
+    Create
 {% endblock %}
 
 {% block content %}

@@ -1,7 +1,7 @@
 {% extends 'student/base.html' %}
 
 {% block title %}
-    Form Student
+    Create
 {% endblock %}
 
 {% block content %}
