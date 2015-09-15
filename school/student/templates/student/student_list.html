@@ -1,9 +1,12 @@
-
-
-<p>List of Artis</p>
-<br/>
-<a href="{% url 'create' %}"> Create </a>
-{% for student in student_list %}
-   <li> {{ student.name }} | {{ student.age }} | {{ student.faculty }} </li><a href="{% url 'delete' student.id %}"> Delete </a> <br/> <a href="{% url 'update' student.id %}"> Update </a>
-{% endfor %}
-<br/>
+{% extends 'student/base.html'%}
+  {% block title %}
+    <p>List of Student</p>
+  {% endblock %}
+{% block content %}
+  <br/>
+  <a href="{% url 'create' %}"> Create </a>
+  {% for student in student_list %}
+     <li> {{ student.name }} | {{ student.age }} | {{ student.faculty }} </li><a href="{% url 'delete' student.id %}"> Delete </a> <br/> <a href="{% url 'update' student.id %}"> Update </a>
+  {% endfor %}
+  <br/>
+{% endblock %}
