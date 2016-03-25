@@ -1,0 +1,13 @@
+{% extends 'student/base.html'%}
+  {% block title %}
+    List of Student
+  {% endblock %}
+{% block content %}
+    <p>List of Student</p>
+  <br/>
+  <a href="{% url 'create' %}"> Create </a>
+  {% for student in student_list %}
+     <li> {{ student.name }} | {{ student.age }} | {{ student.faculty }} </li><a href="{% url 'delete' student.id %}"> Delete </a> <br/> <a href="{% url 'update' student.id %}"> Update </a>
+  {% endfor %}
+  <br/>
+{% endblock %}
